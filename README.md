@@ -8,9 +8,9 @@ This website was written using HTML, JavaScript, and Python 2.7.11.  Users shoul
 
 # Getting and Using the Code
 
-You can download the source code for MoviesWebsite at [https://github.com/ToolsForInsight/MoviesWebsite](this GitHub repo from ToolsForInsight).  You should copy all files in this repo to the same directory on your computer, and enter the following command at the command line:
+You can download the source code for MoviesWebsite at [this GitHub repo from ToolsForInsight](https://github.com/ToolsForInsight/MoviesWebsite).  You should copy all files in this repo to the same directory on your computer, and enter the following command at the command line:
 python entertainment_center.py
 
 # License
 
-This software is licensed under the [https://www.gnu.org/licenses/gpl.html](GNU General Public License v3.0).  Accordingly, you are free to run, study, share, and modify this software only if you give these same freedoms to users of *your* implementation of this software.
+This software is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl.html).  Accordingly, you are free to run, study, share, and modify this software only if you give these same freedoms to users of *your* implementation of this software.
