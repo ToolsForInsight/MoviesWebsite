@@ -62,27 +62,39 @@
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
-        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
-            // Remove the src so the player itself gets removed, as this is the only
-            // reliable way to ensure the video stops playing in IE
-            $("#trailer-video-container").empty();
-        });
+        $(document).on('click',
+                       '.hanging-close, .modal-backdrop, .modal',
+                       function (event) {
+                       // Remove the src so the player itself gets removed,
+                       // as this is the only reliable way to ensure the
+                       // video stops playing in IE
+                           $("#trailer-video-container").empty();
+                       });
         // Start playing the video whenever the trailer modal is opened
         // and add the storyline "in a nutshell" above the trailer
         $(document).on('click', '.movie-tile', function (event) {
-            var description = $(this).attr('data-storyline') + " View the trailer below or ";
+            var description = $(this).attr('data-storyline') +
+                              " View the trailer below or ";
             var title = $(this).attr('data-title');
-            var link = '<a href="' + $(this).attr('data-IMDB') + '">get much more info at IMDB.com</a>.'
-            document.getElementById('movieHeader').innerHTML = title + ': In A Nutshell';
-            document.getElementById('movieStoryline').innerHTML = description + link;
+            var link = '<a href="' + $(this).attr('data-IMDB') +
+                       '">get much more info at IMDB.com</a>.'
+            document.getElementById('movieHeader').innerHTML = title +
+                                                               ': In A ' +
+                                                               'Nutshell';
+            document.getElementById('movieStoryline').innerHTML = description +
+                                                                  link;
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id');
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
-            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
-              'id': 'trailer-video',
-              'type': 'text-html',
-              'src': sourceUrl,
-              'frameborder': 0
-            }));
+            var sourceUrl = 'http://www.youtube.com/embed/' +
+                            trailerYouTubeId +
+                            '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>",
+                                                           {
+                                                           'id': 'trailer-video',
+                                                           'type': 'text-html',
+                                                           'src': sourceUrl,
+                                                           'frameborder': 0
+                                                           }
+                                                        ));
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
@@ -122,62 +134,134 @@
     </div>
     <div class="container">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="vKQi3bBA1y8" data-storyline="A group of free humans battle machine overlords in a struggle to free the rest of the human race from virtual bondage." data-title="The Matrix" data-IMDB="http://www.imdb.com/title/tt0133093/" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="vKQi3bBA1y8"
+    data-storyline="A group of free humans battle machine overlords in a struggle to free the rest of the human race from virtual bondage."
+    data-title="The Matrix"
+    data-IMDB="http://www.imdb.com/title/tt0133093/"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://2.bp.blogspot.com/-2F8gEE3lENI/UEFvWy-MCLI/AAAAAAAAMkA/P5O9gKXKLbs/s1600/The+Matrix+(1999)+1.jpg" width="220" height="342">
     <h2>The Matrix</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="rs_6Psn1XK0" data-storyline="East meets West in this racial, buddy-cop comedy." data-title="Rush Hour" data-IMDB="http://www.imdb.com/title/tt0120812/?ref_=fn_al_tt_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="rs_6Psn1XK0"
+    data-storyline="East meets West in this racial, buddy-cop comedy."
+    data-title="Rush Hour"
+    data-IMDB="http://www.imdb.com/title/tt0120812/?ref_=fn_al_tt_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://static.cinemagia.ro/img/db/movie/00/01/89/rush-hour-798893l.jpg" width="220" height="342">
     <h2>Rush Hour</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="V75dMMIW2B4" data-storyline="An enthralling adaptation of J.R.R. Tolkien's classic fantasy novel." data-title="The Fellowship of the Ring" data-IMDB="http://www.imdb.com/title/tt0120737/?ref_=nv_sr_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="V75dMMIW2B4"
+    data-storyline="An enthralling adaptation of J.R.R. Tolkien's classic fantasy novel."
+    data-title="The Fellowship of the Ring"
+    data-IMDB="http://www.imdb.com/title/tt0120737/?ref_=nv_sr_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://1.bp.blogspot.com/-huikg011hHE/UD3GffyCI8I/AAAAAAAAL8c/2lqUtOVUJok/s1600/The+Fellowship+Of+The+Ring+(2001)+1.jpg" width="220" height="342">
     <h2>The Fellowship of the Ring</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="oiXdPolca5w" data-storyline="A crime thriller with one of the greatest plot twists in cinema history." data-title="The Usual Suspects" data-IMDB="http://www.imdb.com/title/tt0114814/?ref_=nv_sr_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="oiXdPolca5w"
+    data-storyline="A crime thriller with one of the greatest plot twists in cinema history."
+    data-title="The Usual Suspects"
+    data-IMDB="http://www.imdb.com/title/tt0114814/?ref_=nv_sr_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://www.dvdsreleasedates.com/posters/800/T/The-Usual-Suspects-movie-poster.jpg" width="220" height="342">
     <h2>The Usual Suspects</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="-T3wnP91OnI" data-storyline="Will Ferrell as a TV news anchorman in the 1970s, supported by Paul Rudd and Steve Carrell.  Enough Said." data-title="Anchorman" data-IMDB="http://www.imdb.com/title/tt0357413/?ref_=nv_sr_2" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="-T3wnP91OnI"
+    data-storyline="Will Ferrell as a TV news anchorman in the 1970s, supported by Paul Rudd and Steve Carrell.  Enough Said."
+    data-title="Anchorman"
+    data-IMDB="http://www.imdb.com/title/tt0357413/?ref_=nv_sr_2"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://www.publispain.com/posters/anchorman.jpg" width="220" height="342">
     <h2>Anchorman</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="1g3_CFmnU7k" data-storyline="A futuristic struggle between an evil galactic empire and a band of freedom-fighting rebels." data-title="Star Wars" data-IMDB="http://www.imdb.com/title/tt0076759/?ref_=nv_sr_2" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="1g3_CFmnU7k"
+    data-storyline="A futuristic struggle between an evil galactic empire and a band of freedom-fighting rebels."
+    data-title="Star Wars"
+    data-IMDB="http://www.imdb.com/title/tt0076759/?ref_=nv_sr_2"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://www.rock.com/assets/products/349879/large/star-wars-a-new-hope-poster-13828.jpg" width="220" height="342">
     <h2>Star Wars</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="eajuMYNYtuY" data-storyline="A cyborg from the future protects the future leader of mankind from another cyborg." data-title="Terminator 2" data-IMDB="http://www.imdb.com/title/tt0103064/?ref_=nv_sr_3" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="eajuMYNYtuY"
+    data-storyline="A cyborg from the future protects the future leader of mankind from another cyborg."
+    data-title="Terminator 2"
+    data-IMDB="http://www.imdb.com/title/tt0103064/?ref_=nv_sr_3"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://2.bp.blogspot.com/-WpDGHJpyjfQ/UEkDASTeLeI/AAAAAAAANrc/pXEv7w86ckc/s1600/Terminator+2+(1991)+Italy.jpg" width="220" height="342">
     <h2>Terminator 2</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="vw61gCe2oqI" data-storyline="A journalist is caught in a time loop and must defeat an entire invading army himself to save mankind." data-title="Edge of Tomorrow" data-IMDB="http://www.imdb.com/title/tt1631867/?ref_=fn_al_tt_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="vw61gCe2oqI"
+    data-storyline="A journalist is caught in a time loop and must defeat an entire invading army himself to save mankind."
+    data-title="Edge of Tomorrow"
+    data-IMDB="http://www.imdb.com/title/tt1631867/?ref_=fn_al_tt_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://www.ramascreen.com/wp-content/uploads/2014/04/Edge-Of-Tomorrow-poster.jpg" width="220" height="342">
     <h2>Edge of Tomorrow</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="5PSNL1qE6VY" data-storyline="FernGully, but on another planet in the future and in 3D. WARNING: Will make life seem less life-like." data-title="Avatar" data-IMDB="http://www.imdb.com/title/tt0499549/?ref_=nv_sr_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="5PSNL1qE6VY"
+    data-storyline="FernGully, but on another planet in the future and in 3D.  WARNING: Will make life seem less life-like."
+    data-title="Avatar"
+    data-IMDB="http://www.imdb.com/title/tt0499549/?ref_=nv_sr_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://fanaru.com/avatar/image/6676-avatar-avatar-movie-poster.jpg" width="220" height="342">
     <h2>Avatar</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="YoHD9XEInc0" data-storyline="A thief who steals corporate secrets via dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO." data-title="Inception" data-IMDB="http://www.imdb.com/title/tt1375666/?ref_=nv_sr_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="YoHD9XEInc0"
+    data-storyline="A thief who steals corporate secrets via dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO."
+    data-title="Inception"
+    data-IMDB="http://www.imdb.com/title/tt1375666/?ref_=nv_sr_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="https://grimmella.files.wordpress.com/2012/09/inception-movie-poster.jpg" width="220" height="342">
     <h2>Inception</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="auYbpnEwBBg" data-storyline="An undercover cop and a mole in the police department attempt to identify each other while infiltrating an Irish gang in South Boston." data-title="The Departed" data-IMDB="http://www.imdb.com/title/tt0407887/?ref_=nv_sr_1" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="auYbpnEwBBg"
+    data-storyline="An undercover cop and a mole in the police department attempt to identify each other while infiltrating an Irish gang in South Boston."
+    data-title="The Departed"
+    data-IMDB="http://www.imdb.com/title/tt0407887/?ref_=nv_sr_1"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://www.freemovieposters.net/posters/departed_the_2006_1253_poster.jpg" width="220" height="342">
     <h2>The Departed</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="bpGLpD25dpU" data-storyline="A toaster, a blanket, a lamp, a radio, and a vacuum cleaner journey to the city to find their master after being abandoned in their cabin in the woods." data-title="The Brave Little Toaster" data-IMDB="http://www.imdb.com/title/tt0092695/?ref_=nv_sr_2" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="bpGLpD25dpU"
+    data-storyline="A toaster, a blanket, a lamp, a radio, and a vacuum cleaner journey to the city to find their master after being abandoned in their cabin in the woods."
+    data-title="The Brave Little Toaster"
+    data-IMDB="http://www.imdb.com/title/tt0092695/?ref_=nv_sr_2"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="http://media-cache-ec0.pinimg.com/736x/ec/f5/da/ecf5da8bd9f22fb0935d450e09d9f439.jpg" width="220" height="342">
     <h2>The Brave Little Toaster</h2>
 </div>

@@ -74,27 +74,39 @@ main_page_head = '''
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
-        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
-            // Remove the src so the player itself gets removed, as this is the only
-            // reliable way to ensure the video stops playing in IE
-            $("#trailer-video-container").empty();
-        });
+        $(document).on('click',
+                       '.hanging-close, .modal-backdrop, .modal',
+                       function (event) {
+                       // Remove the src so the player itself gets removed,
+                       // as this is the only reliable way to ensure the
+                       // video stops playing in IE
+                           $("#trailer-video-container").empty();
+                       });
         // Start playing the video whenever the trailer modal is opened
         // and add the storyline "in a nutshell" above the trailer
         $(document).on('click', '.movie-tile', function (event) {
-            var description = $(this).attr('data-storyline') + " View the trailer below or ";
+            var description = $(this).attr('data-storyline') +
+                              " View the trailer below or ";
             var title = $(this).attr('data-title');
-            var link = '<a href="' + $(this).attr('data-IMDB') + '">get much more info at IMDB.com</a>.'
-            document.getElementById('movieHeader').innerHTML = title + ': In A Nutshell';
-            document.getElementById('movieStoryline').innerHTML = description + link;
+            var link = '<a href="' + $(this).attr('data-IMDB') +
+                       '">get much more info at IMDB.com</a>.'
+            document.getElementById('movieHeader').innerHTML = title +
+                                                               ': In A ' +
+                                                               'Nutshell';
+            document.getElementById('movieStoryline').innerHTML = description +
+                                                                  link;
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id');
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
-            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
-              'id': 'trailer-video',
-              'type': 'text-html',
-              'src': sourceUrl,
-              'frameborder': 0
-            }));
+            var sourceUrl = 'http://www.youtube.com/embed/' +
+                            trailerYouTubeId +
+                            '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>",
+                                                           {
+                                                           'id': 'trailer-video',
+                                                           'type': 'text-html',
+                                                           'src': sourceUrl,
+                                                           'frameborder': 0
+                                                           }
+                                                        ));
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
@@ -146,7 +158,13 @@ main_page_content = '''
 
 """An HTML template for a single movie entry"""
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-storyline="{movie_storyline}" data-title="{movie_title}" data-IMDB="{IMDB_url}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="{trailer_youtube_id}"
+    data-storyline="{movie_storyline}"
+    data-title="{movie_title}"
+    data-IMDB="{IMDB_url}"
+    data-toggle="modal"
+    data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
 </div>
@@ -164,9 +182,10 @@ def create_movie_tiles_content(movies):
     looping through each movie object in the provided list of movies.
     
     Return the relevant information as an HTML formatted string.
-    Returned string is intended to be inserted as HTML into a webpage to
-    facilitate interactive viewing of data for each movie in the list of movies.
-    
+
+    Returned string is intended to be inserted as HTML
+    into a webpage to facilitate interactive viewing of data
+    for each movie in the list of movies.
     """
     content = ''
     for movie in movies:
@@ -194,13 +213,15 @@ def open_movies_page(movies):
     Keyword arguments:
     movies -- a list of Movie objects from the module Media.
 
-    First, create or overwrite the file containing all of the webpage information.
+    First, create or overwrite the file
+    containing all of the webpage information.
     
-    Second, generate and insert the content for each movie tile into the main content
-    portion of the page.
+    Second, generate and insert the content for each
+    movie tile into the main content portion of the page.
     
-    Third, append the main content of the page to the head of the page and write the
-    result to the file containing all of the webpage information.
+    Third, append the main content of the page to the
+    head of the page and write the result to the file
+    containing all of the webpage information.
 
     Fourth, open the file containing all of the webpage information
     in the browser (in a new tab, if possible).

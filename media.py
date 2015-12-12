@@ -1,7 +1,7 @@
 """Define different types of media.
 
-Currently, the only media defined is "movie."  However, media could also include,
-for example, music or books.
+Currently, the only media defined is "movie."  However,
+media could also include, for example, music or books.
 """
 
 class Movie():
